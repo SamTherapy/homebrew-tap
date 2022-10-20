@@ -9,7 +9,7 @@ class Awl < Formula
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone//sam/awl/releases/download/v0.5.8/awl_0.5.8_macOS_all.tar.gz"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_macOS_all.tar.gz"
     sha256 "0d380cf8015ebfa976d4a8b94bcfeeb20e952d0b341e585ee8a9b2b1c6a798ca"
 
     def install
@@ -19,7 +19,7 @@ class Awl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone//sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_arm64.tar.gz"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_arm64.tar.gz"
       sha256 "68b34e8e758d995b294189fdc6e5359562947514592311dccf6986b4bbffe7ac"
 
       def install
@@ -27,7 +27,7 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone//sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_armv6.tar.gz"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_armv6.tar.gz"
       sha256 "8cadfad662bbc6d3b259e8a770cb4e8ca8cc7a693ed7d51d1a12f8fe3c160845"
 
       def install
@@ -35,7 +35,7 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://git.froth.zone//sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_amd64.tar.gz"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_amd64.tar.gz"
       sha256 "7129b36d3fb85bf7bcf177f872cdfaea8741b61227828f7feb67c10c50f3f6ca"
 
       def install

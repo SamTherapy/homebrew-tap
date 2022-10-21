@@ -14,24 +14,36 @@ class Awl < Formula
 
     def install
       bin.install "awl"
+      bash_completion.install "completions/bash.bash" => "awl"
+      zsh_completion.install "completions/zsh.zsh" => "_awl"
+      fish_completion.install "completions/fish.fish" => "awl.fish"
+      man1.install "doc/awl.1.gz"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_arm64.tar.gz"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_armv6.tar.gz"
       sha256 "68b34e8e758d995b294189fdc6e5359562947514592311dccf6986b4bbffe7ac"
 
       def install
         bin.install "awl"
+        bash_completion.install "completions/bash.bash" => "awl"
+        zsh_completion.install "completions/zsh.zsh" => "_awl"
+        fish_completion.install "completions/fish.fish" => "awl.fish"
+        man1.install "doc/awl.1.gz"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_armv6.tar.gz"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.8/awl_0.5.8_Linux_arm64.tar.gz"
       sha256 "8cadfad662bbc6d3b259e8a770cb4e8ca8cc7a693ed7d51d1a12f8fe3c160845"
 
       def install
         bin.install "awl"
+        bash_completion.install "completions/bash.bash" => "awl"
+        zsh_completion.install "completions/zsh.zsh" => "_awl"
+        fish_completion.install "completions/fish.fish" => "awl.fish"
+        man1.install "doc/awl.1.gz"
       end
     end
     if Hardware::CPU.intel?
@@ -40,9 +52,11 @@ class Awl < Formula
 
       def install
         bin.install "awl"
+        bash_completion.install "completions/bash.bash" => "awl"
+        zsh_completion.install "completions/zsh.zsh" => "_awl"
+        fish_completion.install "completions/fish.fish" => "awl.fish"
+        man1.install "doc/awl.1.gz"
       end
     end
   end
-
-  head "https://git.froth.zone/sam/awl.git"
 end

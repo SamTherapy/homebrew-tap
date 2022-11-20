@@ -5,12 +5,12 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.5.9"
+  version "0.5.10"
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone/sam/awl/releases/download/v0.5.9/awl_0.5.9_macOS_all.tar.gz"
-    sha256 "1a56454b1543e2d9dee990ab40df87bb2b48574f29746417a2f122e977c847f4"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_macOS_all.tar.gz"
+    sha256 "8cb59c519ecd0bd594fae9b09d10455f3bd28f0b78a0c9868ae6bdde7aff828b"
 
     def install
       bin.install "awl"
@@ -23,8 +23,8 @@ class Awl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.9/awl_0.5.9_Linux_armv6.tar.gz"
-      sha256 "53191e53c1515525f121328895f4f2175b6dde1a0c167345f263e17fb9dcdb6a"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_Linux_armv6.tar.gz"
+      sha256 "a90174a1a837dde08ed4020e5445b6c2d274944750942f95a61778b457b265d2"
 
       def install
         bin.install "awl"
@@ -35,8 +35,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.9/awl_0.5.9_Linux_amd64.tar.gz"
-      sha256 "0e4a5ad13b3cd6a18ebffb4a6ad0679301589e593b3c39f4a7e4b295a9811e56"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_Linux_amd64.tar.gz"
+      sha256 "8511b885e64bad135c904fbe4906cfc498592433c443c92b4ad547f760821c9b"
 
       def install
         bin.install "awl"
@@ -47,8 +47,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.9/awl_0.5.9_Linux_arm64.tar.gz"
-      sha256 "4198919df6bcebc805946ce5b699051e04be6eed8a5564471d74017de13bba57"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_Linux_arm64.tar.gz"
+      sha256 "7bfe913ea384ed09f07337fd4d8c0c6aed869dafb943a79313696c42cc6b8896"
 
       def install
         bin.install "awl"

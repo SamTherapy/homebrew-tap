@@ -5,12 +5,12 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.5.10"
+  version "0.5.11"
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_macOS_all.tar.gz"
-    sha256 "8cb59c519ecd0bd594fae9b09d10455f3bd28f0b78a0c9868ae6bdde7aff828b"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.5.11/awl_0.5.11_macOS_all.tar.gz"
+    sha256 "71de891f3fc94cca790fca58de97e7d62f57c6d69fea7a68748e57c05374c7e5"
 
     def install
       bin.install "awl"
@@ -23,20 +23,8 @@ class Awl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_Linux_armv6.tar.gz"
-      sha256 "a90174a1a837dde08ed4020e5445b6c2d274944750942f95a61778b457b265d2"
-
-      def install
-        bin.install "awl"
-        bash_completion.install "completions/bash.bash" => "awl"
-        zsh_completion.install "completions/zsh.zsh" => "_awl"
-        fish_completion.install "completions/fish.fish" => "awl.fish"
-        man1.install "doc/awl.1.gz"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_Linux_amd64.tar.gz"
-      sha256 "8511b885e64bad135c904fbe4906cfc498592433c443c92b4ad547f760821c9b"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.11/awl_0.5.11_Linux_armv6.tar.gz"
+      sha256 "2aad6113a887e3310269f06bddd3a0761268cc32385a5f3daa385e84defce1a6"
 
       def install
         bin.install "awl"
@@ -47,8 +35,20 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.5.10/awl_0.5.10_Linux_arm64.tar.gz"
-      sha256 "7bfe913ea384ed09f07337fd4d8c0c6aed869dafb943a79313696c42cc6b8896"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.11/awl_0.5.11_Linux_arm64.tar.gz"
+      sha256 "cfdf930209b67a4e232185037fdb2fd828c5d993907a3638e0a4d398a1aec941"
+
+      def install
+        bin.install "awl"
+        bash_completion.install "completions/bash.bash" => "awl"
+        zsh_completion.install "completions/zsh.zsh" => "_awl"
+        fish_completion.install "completions/fish.fish" => "awl.fish"
+        man1.install "doc/awl.1.gz"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.5.11/awl_0.5.11_Linux_amd64.tar.gz"
+      sha256 "f06bc14f3c7349065e0194bbf2b2ba9f0f8702bd7b8da0db6f9109346091f02d"
 
       def install
         bin.install "awl"

@@ -5,12 +5,12 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.6.0"
+  version "0.6.1"
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone/sam/awl/releases/download/v0.6.0/awl_0.6.0_macOS_all.tar.gz"
-    sha256 "3fef62e299b2ed5533a8364b47118a2dc60b09ae3156d4563663bbd2a0ae6c83"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.6.1/awl_0.6.1_macOS_all.tar.gz"
+    sha256 "4969252f3b6330fd84f68e7b9f1e78dfe10d8a8e31697d7456db1a6a116a95f2"
 
     def install
       bin.install "awl"
@@ -22,9 +22,9 @@ class Awl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.0/awl_0.6.0_Linux_amd64.tar.gz"
-      sha256 "8d703a8a3fd2de05a61837d223ba0dfe7145c74c8777cff4483dcb868fa5a7cb"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.1/awl_0.6.1_Linux_arm64.tar.gz"
+      sha256 "f659eac97bc3c25598b49022eb931129dc740e543d88b38e3f8d9440fcb792ea"
 
       def install
         bin.install "awl"
@@ -35,8 +35,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.0/awl_0.6.0_Linux_armv6.tar.gz"
-      sha256 "3029f646b4d21cfb5a0110f9c3b09bc0f2b24514794cb3827819bd59e18fd31e"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.1/awl_0.6.1_Linux_armv6.tar.gz"
+      sha256 "6bb0aae089f6a98d31433e7006bff976f3a769ab86932be80a067137a47278a6"
 
       def install
         bin.install "awl"
@@ -46,9 +46,9 @@ class Awl < Formula
         man1.install "doc/awl.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.0/awl_0.6.0_Linux_arm64.tar.gz"
-      sha256 "f349ed00433c46f4b30fd978ae2717798a14001a609095a74cff8ca731d0ceab"
+    if Hardware::CPU.intel?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.1/awl_0.6.1_Linux_amd64.tar.gz"
+      sha256 "7dd2936a73cc31a79ddd6bcc6de45a32f1f215f642c26ec936c619089b602bf3"
 
       def install
         bin.install "awl"

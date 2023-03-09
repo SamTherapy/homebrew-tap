@@ -5,13 +5,13 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.6.5"
+  version "0.6.6"
   license "BSD-3-Clause"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.5/awl_MacOS_amd64.tar.gz"
-      sha256 "164c63fec9ccf5f0512ccec1cc38fa5894983de17f5ae64c0ece90ac9cb8cead"
+    if Hardware::CPU.arm?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.6/awl_MacOS_arm64.tar.gz"
+      sha256 "c9fc27393870642d543eb8a5f0c6f3435e5d1f898f8821eab9c07323dc4b9aa0"
 
       def install
         bin.install "awl"
@@ -21,9 +21,9 @@ class Awl < Formula
         man1.install "doc/awl.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.5/awl_MacOS_arm64.tar.gz"
-      sha256 "1506e4b6a20956ca7c563790618d372b40e28c98ab2c6a389dee454e5ac91c74"
+    if Hardware::CPU.intel?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.6/awl_MacOS_amd64.tar.gz"
+      sha256 "41844f72669da60e4173e91f2b1f50a0a0fbf90c1415e9b08fb6028782ff98ec"
 
       def install
         bin.install "awl"
@@ -37,8 +37,8 @@ class Awl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.5/awl_Linux_arm.tar.gz"
-      sha256 "d0035c825489d1b67645b58ad4af046481571f511b7e73a1c5b56bb541ca1ae8"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.6/awl_Linux_arm.tar.gz"
+      sha256 "4c802e9009a59de611ced7c80db36d75bc7af7ee3de59b7059d3a0e011d0dfa6"
 
       def install
         bin.install "awl"
@@ -49,8 +49,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.5/awl_Linux_arm64.tar.gz"
-      sha256 "628eb70770b5d798e1b3184b8560d49010f4ba2d8d5736430e2eaf6161b11af5"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.6/awl_Linux_arm64.tar.gz"
+      sha256 "2b29fac9418103e9214020a56474e77018618c5b61607f20cabc9a672cd2debf"
 
       def install
         bin.install "awl"
@@ -61,8 +61,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.5/awl_Linux_amd64.tar.gz"
-      sha256 "0bad91c73229b52fd854bcfaa4bf957f0ecfe05a1eb6f1b19efe10da7f4895b1"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.6/awl_Linux_amd64.tar.gz"
+      sha256 "22cd617c79decad7c85a38cf78073fbb1b45003721da0687dd381167cf162c4f"
 
       def install
         bin.install "awl"

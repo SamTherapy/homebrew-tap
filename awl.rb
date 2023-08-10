@@ -5,12 +5,12 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.6.8"
+  version "0.6.9"
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone/sam/awl/releases/download/v0.6.8/awl_MacOS_all.tar.gz"
-    sha256 "7babc0bfbcf014962d37e411f2c243583d3dcff111d7776b0f9624c65e742368"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.6.9/awl_MacOS_all.tar.gz"
+    sha256 "377c6db95e50500aa2944b446126490ca319eeb97a5566295f1d872cb695c683"
 
     def install
       bin.install "awl"
@@ -23,8 +23,8 @@ class Awl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.8/awl_Linux_arm.tar.gz"
-      sha256 "4231f1fb32a6c4116cbb244c6e9eac77af0657f76f0d3d7dde60fe16bb00f650"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.9/awl_Linux_arm.tar.gz"
+      sha256 "d45ef3515165d96030b81902ab7a140479795c59199a09fb7a975ed96ab372f5"
 
       def install
         bin.install "awl"
@@ -35,8 +35,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.8/awl_Linux_arm64.tar.gz"
-      sha256 "f6a8e389c4608e4c6a68ac74d3cacc428aad6d96f25f3110743d80cc1ddc5f67"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.9/awl_Linux_arm64.tar.gz"
+      sha256 "578ce771c0c1a64d1589f4ebe29b252574e1235c44260ff170d7c67eb9620d78"
 
       def install
         bin.install "awl"
@@ -47,8 +47,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.8/awl_Linux_amd64.tar.gz"
-      sha256 "2eb397abd9e5f37b8faa68f997ef9fd0c20bc060bff27a2ea597f84a92f7b88f"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.9/awl_Linux_amd64.tar.gz"
+      sha256 "7704e163ecc7f69c0b0ea6520d997f63c8fb16a7b7045a2cee29ac2963aa7966"
 
       def install
         bin.install "awl"

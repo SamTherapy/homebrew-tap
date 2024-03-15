@@ -5,12 +5,12 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.6.10"
+  version "0.6.11"
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone/sam/awl/releases/download/v0.6.10/awl_MacOS_all.tar.gz"
-    sha256 "517c23700cb25a51dd4b149401c9418d18a56658e4d871f5a27e4ba2a7b4a0fe"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.6.11/awl_MacOS_all.tar.gz"
+    sha256 "c0f9745d26de6b56233ff6a67a24403e1ad3bf7d943117184ce95ba7a5d861c7"
 
     def install
       bin.install "awl"
@@ -23,8 +23,8 @@ class Awl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.10/awl_Linux_arm.tar.gz"
-      sha256 "d489cac34cb0d60517dc88c4651e6662090b74df4511ffe2c10db44f8578e944"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.11/awl_Linux_arm.tar.gz"
+      sha256 "8bc45411c8799a152388c11173e2476b62b245e13e585ff53199f7702ad434c9"
 
       def install
         bin.install "awl"
@@ -35,8 +35,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.10/awl_Linux_arm64.tar.gz"
-      sha256 "ba01206fd54c4331a050f5cf20d0fa5321237135a3953d89f9fd9f972085ef19"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.11/awl_Linux_arm64.tar.gz"
+      sha256 "538d35e3eb2470141a5f94f34abaa726dfe2fe9198415067ee2f186d773b57dd"
 
       def install
         bin.install "awl"
@@ -47,8 +47,8 @@ class Awl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.10/awl_Linux_amd64.tar.gz"
-      sha256 "d0b49c7996df1754f58a85517b8e612c58f22c02f57c91dfdf18a9dc9ee8d358"
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.11/awl_Linux_amd64.tar.gz"
+      sha256 "85010071cff48006467314c42ae2a96656256da481c29478b318d2607caca19e"
 
       def install
         bin.install "awl"

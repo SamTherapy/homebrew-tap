@@ -10,7 +10,7 @@ class Awl < Formula
 
   on_macos do
     url "https://git.froth.zone/sam/awl/releases/download/v0.6.12/awl_MacOS_all.tar.gz"
-    sha256 "d424226586347a3702380eb891df6d6068156335f5107a9f63a29a78e406e712"
+    sha256 "c7ccf47fa428c267f4d55129a2256fee73022cb48a80e5581b10e11ef1a8e27b"
 
     def install
       bin.install "awl"
@@ -22,9 +22,21 @@ class Awl < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://git.froth.zone/sam/awl/releases/download/v0.6.12/awl_Linux_arm.tar.gz"
+      sha256 "a0aa7dccd134cb6280ff95e6646dc9dbf45b8f8b658ef033e87d91a2e482c1f4"
+
+      def install
+        bin.install "awl"
+        bash_completion.install "completions/bash.bash" => "awl"
+        zsh_completion.install "completions/zsh.zsh" => "_awl"
+        fish_completion.install "completions/fish.fish" => "awl.fish"
+        man1.install "docs/awl.1.gz"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://git.froth.zone/sam/awl/releases/download/v0.6.12/awl_Linux_arm64.tar.gz"
-      sha256 "5a80b6af0659f8f9212f94063702c5a2e5d9e4226936e9003819d212814cea4a"
+      sha256 "7ab9f176ddab41cc88876d52f811e5bf0397a9be07cd6eec8777d8545c99a063"
 
       def install
         bin.install "awl"
@@ -36,19 +48,7 @@ class Awl < Formula
     end
     if Hardware::CPU.intel?
       url "https://git.froth.zone/sam/awl/releases/download/v0.6.12/awl_Linux_amd64.tar.gz"
-      sha256 "6e81f67a9c4d28e5a7847bb888594439788e3053e2f11b87659f70cf1ad04820"
-
-      def install
-        bin.install "awl"
-        bash_completion.install "completions/bash.bash" => "awl"
-        zsh_completion.install "completions/zsh.zsh" => "_awl"
-        fish_completion.install "completions/fish.fish" => "awl.fish"
-        man1.install "docs/awl.1.gz"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://git.froth.zone/sam/awl/releases/download/v0.6.12/awl_Linux_arm.tar.gz"
-      sha256 "9c670bd083fee8f3f20f3e689f64b9e12fb6dbb52686e2e40fe961614e24ebb1"
+      sha256 "46a49a8f7463f23e4d470d3d24798246abebb34792d0d6740a81de79197eea61"
 
       def install
         bin.install "awl"

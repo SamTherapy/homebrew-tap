@@ -5,12 +5,12 @@
 class Awl < Formula
   desc "A DNS query tool"
   homepage "https://dns.froth.zone/awl"
-  version "0.6.13"
+  version "0.6.14"
   license "BSD-3-Clause"
 
   on_macos do
-    url "https://git.froth.zone/sam/awl/releases/download/v0.6.13/awl_MacOS_all.tar.gz"
-    sha256 "50c09739fea711049e3c3491a843c5a2b85bcf423e858e55a7ee40a848c976ae"
+    url "https://git.froth.zone/sam/awl/releases/download/v0.6.14/awl_MacOS_all.tar.gz"
+    sha256 "efaeb1b9e04bcb5fc066224f6ea06ec343839389d6e8ef2b985eb46da7b3048d"
 
     def install
       bin.install "awl"
@@ -24,8 +24,8 @@ class Awl < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://git.froth.zone/sam/awl/releases/download/v0.6.13/awl_Linux_amd64.tar.gz"
-        sha256 "9dff04fc739d460163783040fd804b024afe6d9d4e6c14f904c0271ca2b25bfd"
+        url "https://git.froth.zone/sam/awl/releases/download/v0.6.14/awl_Linux_amd64.tar.gz"
+        sha256 "3179c64ef353f99f754bd493914b2d16ed6cdbe4574bbe9585858428142a2f7c"
 
         def install
           bin.install "awl"
@@ -38,8 +38,8 @@ class Awl < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://git.froth.zone/sam/awl/releases/download/v0.6.13/awl_Linux_arm.tar.gz"
-        sha256 "68b45e0f140786ab12f54836e5cf0ac3e3a0d5238d47f710c8f4ed141c6e22f4"
+        url "https://git.froth.zone/sam/awl/releases/download/v0.6.14/awl_Linux_arm.tar.gz"
+        sha256 "d6703dbc88bfc16afd9bfcb73e27dd339270ad04ee5de05e145f57f602a6e81b"
 
         def install
           bin.install "awl"
@@ -52,8 +52,8 @@ class Awl < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://git.froth.zone/sam/awl/releases/download/v0.6.13/awl_Linux_arm64.tar.gz"
-        sha256 "e308ea564e54e1e40f542391c8cbcb3988a3ef1cb536bd058aec3e87fe639201"
+        url "https://git.froth.zone/sam/awl/releases/download/v0.6.14/awl_Linux_arm64.tar.gz"
+        sha256 "558e2a947a8e290f39abf9c3b0c4b0a00aab05baaa7a1f2b68ee1edbfbeb0b13"
 
         def install
           bin.install "awl"
